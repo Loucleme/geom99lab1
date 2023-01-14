@@ -9,15 +9,13 @@ Be creative and use multiple parameters from the API documentation to earn a top
 ## Directions URL
 
 ```
-https://YourDirectionsApiURLGoesHere
+[https://YourDirectionsApiURLGoesHere](http://jsonviewer.stack.hu/#http://www.google.com/maps/place/Ottawa,+ON/@44.2673762,-80.0066676,7z/data=!4m36!1m30!4m29!1m6!1m2!1s0x89d35054bb6a5a4b:0x37563636c082837!2sSt.+Catharines,+ON!2m2!1d-79.2468626!2d43.1593745!1m6!1m2!1s0x89d58c91b5103a57:0x5037b28c72318e0!2sPeterborough,+ON!2m2!1d-78.3199606!2d44.3047061!1m6!1m2!1s0x4ccd88b03bb2843b:0x4cc0b1932e63baf8!2sSmiths+Falls,+ON!2m2!1d-76.0216189!2d44.903748!1m6!1m2!1s0x4cce05b25f5113af:0x8a6a51e131dd15ed!2sOttawa,+ON!2m2!1d-75.6971931!2d45.4215296!3e0!3m4!1s0x4cce05b25f5113af:0x8a6a51e131dd15ed!8m2!3d45.4215296!4d-75.6971931 )
 ```
-http://jsonviewer.stack.hu/#http://www.google.com/maps/place/Ottawa,+ON/@44.2673762,-80.0066676,7z/data=!4m36!1m30!4m29!1m6!1m2!1s0x89d35054bb6a5a4b:0x37563636c082837!2sSt.+Catharines,+ON!2m2!1d-79.2468626!2d43.1593745!1m6!1m2!1s0x89d58c91b5103a57:0x5037b28c72318e0!2sPeterborough,+ON!2m2!1d-78.3199606!2d44.3047061!1m6!1m2!1s0x4ccd88b03bb2843b:0x4cc0b1932e63baf8!2sSmiths+Falls,+ON!2m2!1d-76.0216189!2d44.903748!1m6!1m2!1s0x4cce05b25f5113af:0x8a6a51e131dd15ed!2sOttawa,+ON!2m2!1d-75.6971931!2d45.4215296!3e0!3m4!1s0x4cce05b25f5113af:0x8a6a51e131dd15ed!8m2!3d45.4215296!4d-75.6971931 
+
 
 ## Next paste the full JSON response to this query here:
 
 ```JSON
-PASTE_YOUR_JSON_RESULTS_HERE
-```
 {
    "geocoded_waypoints" : [
       {
@@ -1547,6 +1545,8 @@ PASTE_YOUR_JSON_RESULTS_HERE
    ],
    "status" : "OK"
 }
+```
+
 ____
 ## Rubric
 
