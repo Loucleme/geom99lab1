@@ -1,12 +1,9 @@
-function initMap(): void {
-  const map = new google.maps.Map(
-    document.getElementById("map") as HTMLElement,
-    {
+function initMap(): {
+  const map = new google.maps.Map(document.getElementById("map"), {
       center: { lat: 52.068, lng: -1.773},
       zoom: 7,
       mapTypeId: "terrain",
-    }
-  );
+});
 
   // Define the symbol, using one of the predefined paths ('CIRCLE')
   // supplied by the Google Maps JavaScript API.
@@ -57,13 +54,8 @@ function animateCircle(line: google.maps.Polyline) {
 
     icons[0].offset = count / 2 + "%";
     line.set("icons", icons);
-  }, 20);
+  }, 80);
 }
 
-declare global {
-  interface Window {
-    initMap: () => void;
-  }
-}
 window.initMap = initMap;
-export {};
+
