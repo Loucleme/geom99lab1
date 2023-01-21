@@ -1,9 +1,11 @@
+let map;
+
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-      center: { lat: 52.068, lng: -1.773},
+      center: {lat: 52.068, lng: -1.773},
       zoom: 7,
       mapTypeId: "terrain",
-});
+  });
 
   // Define the symbol, using one of the predefined paths ('CIRCLE')
   // supplied by the Google Maps JavaScript API.
