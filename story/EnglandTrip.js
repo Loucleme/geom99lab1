@@ -45,7 +45,7 @@ function initMap(): {
 
 // Use the DOM setInterval() function to change the offset of the symbol
 // at fixed intervals.
-function animateCircle(line: google.maps.Polyline) {
+function animateCircle(line) {
   let count = 0;
 
   window.setInterval(() => {
