@@ -10,7 +10,9 @@ function initMap() {
     const lineSymbol = {
       path: google.maps.SymbolPath.CIRCLE,
       scale: 8,
-      strokeColor: "#393",
+      fillOpacity: ".6",
+      strokeColor: "red",
+      strokeWeight: "5",
     };
   
     // Create the polyline and add the symbol to it via the 'icons' property.
