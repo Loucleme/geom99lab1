@@ -11,7 +11,6 @@ function initMap() {
       path: google.maps.SymbolPath.CIRCLE,
       scale: 8,
       strokeColor: "lightblue",
-
     };
   
     // Create the polyline and add the symbol to it via the 'icons' property.
@@ -40,6 +39,7 @@ function initMap() {
       map: map,
     });
     
+  // Create the marker locations with what the label will be  
    const roadTripStops = [
         [{lat: 50.854, lng: -0.555},"Arundel Castle"],
         [{lat: 51.504, lng: -0.124},"London"],
@@ -56,10 +56,10 @@ function initMap() {
         [{lat: 50.816, lng: -0.1389},"Brighton Palace Pier"],
   ];
 
-  // Create an info window to share between markers.
+  // Create an info window 
   const infoWindow = new google.maps.InfoWindow();
 
-  // Create the markers.
+  // Create the marker labels and pop up info (title).
   roadTripStops.forEach(([position, title], i) => {
     const marker = new google.maps.Marker({
       position,
@@ -69,7 +69,7 @@ function initMap() {
       optimized: true,
     });
 
-    // Add a click listener for each marker, and set up the info window.
+    // Add a click listener for each marker, and set up the info window. Allows the markers to be clicked and open the text(title)
     marker.addListener("click", () => {
       infoWindow.close();
       infoWindow.setContent(marker.getTitle());
@@ -77,11 +77,12 @@ function initMap() {
     });
   });
 
+  //inputs the animated moving symbol from the function below (can only call one function)
   animateCircle(line);
 }
   
 // Use the DOM setInterval() function to change the offset of the symbol
-// at fixed intervals.
+// at fixed intervals. Here the offset and speed of symbol can be set with the icon wanted as the symbol
 function animateCircle(line) {
   let count = 0;
      window.setInterval(() => {
@@ -94,4 +95,5 @@ function animateCircle(line) {
     }, 80);
 }
 
+//function to open in window
 window.initMap = initMap;
