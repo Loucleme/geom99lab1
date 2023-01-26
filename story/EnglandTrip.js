@@ -11,7 +11,7 @@ function initMap() {
       path: google.maps.SymbolPath.CIRCLE,
       scale: 8,
       fillOpacity: ".6",
-      strokeColor: "red",
+      strokeColor: "blue",
       strokeWeight: "5",
     };
   
@@ -40,7 +40,44 @@ function initMap() {
       ],
       map: map,
     });
-  
+    
+   const RoadTripStops: [google.maps.LatLngLiteral, string][] = [
+        [{lat: 50.854, lng: -0.555},"Arundel Castle"],
+        [{lat: 51.504, lng: -0.124},"London"],
+        [{lat: 51.463, lng: -0.650},"Legoland"],
+        [{lat: 51.381, lng: -2.359},"Roman Baths"],
+        [{lat: 51.454, lng: -2.627},"Suspension Bridge"],
+        [{lat: 51.449, lng: -2.608},"SS Great Britain"],
+        [{lat: 51.452, lng: -2.592},"Floating Harbour"],
+        [{lat: 51.415, lng: -2.474},"Avon Valley Adventure & Wildlife Park"],
+        [{lat: 53.382, lng: -2.937},"Sefton Park"],
+        [{lat: 53.548, lng: -3.102},"Formby Coast"],
+        [{lat: 53.430, lng: -2.960},"Anfield Stadium"],
+        [{lat: 51.178, lng: -1.826},"Stonehenge"],
+        [{lat: 50.816, lng: -0.1389},"Brighton Palace Pier"],
+  ];
+
+  // Create an info window to share between markers.
+  const infoWindow = new google.maps.InfoWindow();
+
+  // Create the markers.
+  RoadTripStops.forEach(([position, title], i) => {
+    const marker = new google.maps.Marker({
+      position,
+      map,
+      title: `${title}`,
+      label: `${i + 1}`,
+      optimized: true,
+    });
+
+    // Add a click listener for each marker, and set up the info window.
+    marker.addListener("click", () => {
+      infoWindow.close();
+      infoWindow.setContent(marker.getTitle());
+      infoWindow.open(marker.getMap(), marker);
+    });
+  });
+
  animateCircle(line);
 }
   
