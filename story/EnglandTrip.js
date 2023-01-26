@@ -40,7 +40,7 @@ function initMap() {
       map: map,
     });
     
-   const roadTripStops: [google.maps.LatLngLiteral, string][] = [
+   const roadTripStops = [google.maps.LatLngLiteral, string][] = [
         [{lat: 50.854, lng: -0.555},"Arundel Castle"],
         [{lat: 51.504, lng: -0.124},"London"],
         [{lat: 51.463, lng: -0.650},"Legoland"],
