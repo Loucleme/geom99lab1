@@ -41,7 +41,7 @@ function initMap() {
       map: map,
     });
     
-   const RoadTripStops: [google.maps.LatLngLiteral, string][] = [
+   const roadTripStops: [google.maps.LatLngLiteral, string][] = [
         [{lat: 50.854, lng: -0.555},"Arundel Castle"],
         [{lat: 51.504, lng: -0.124},"London"],
         [{lat: 51.463, lng: -0.650},"Legoland"],
@@ -61,7 +61,7 @@ function initMap() {
   const infoWindow = new google.maps.InfoWindow();
 
   // Create the markers.
-  RoadTripStops.forEach(([position, title], i) => {
+  roadTripStops.forEach(([position, title], i) => {
     const marker = new google.maps.Marker({
       position,
       map,
