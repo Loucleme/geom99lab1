@@ -32,16 +32,10 @@
   const view = new MapView({
     container: "viewDiv",
     map: map,
-    center: [-118.80543,34.02700],
-    zoom: 13
+    center: [53.5720, -113.4858],
+    zoom: 5
   });
 
-//Trailheads feature layer (points)
-  const trailheadsLayer = new FeatureLayer({
-    url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
-  });
-
-  map.add(trailheadsLayer);
 
 //Trails feature layer (lines)
   const trailsLayer = new FeatureLayer({
