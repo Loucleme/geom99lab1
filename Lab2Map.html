@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,47 +13,53 @@
   </style>
   <link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/themes/light/main.css">
   <script src="https://js.arcgis.com/4.25/"></script>
-
   <script>
+    
   require([
-    "esri/config",
     "esri/Map",
-    "esri/views/MapView",
-    "esri/layers/FeatureLayer"
+    "esri/views/SceneView",
+    "esri/widgets/BasemapGallery",
+    "esri/layers/FeatureLayer",
+  ],
 
-  ], function(esriConfig,Map, MapView, FeatureLayer) {
+(Map, SceneView, BasemapGallery, FeatureLayer) => {
+        const map = new Map({
+         basemap: "gray-vector"
+        });
 
   // esriConfig.apiKey = "AAPK14ee6e7432dc457cbbbec24ba742d929ba3HQvUwvDQQ0mYFUF5WzSTFnxXVOpSp2n_DC1T3vJ03PPuvy5DvBHAouVL2A0v2";
+    const view = new SceneView({
+          container: "viewDiv",
+          map: map,
+          center: [-113.4858, 53.5720],
+          zoom: 3
+     });
+ const basemapGallery = new BasemapGallery({
+          view: view
+    });
 
-  const map = new Map({
-    basemap: "arcgis-topographic"
-  });
-
-  const view = new MapView({
-    container: "viewDiv",
-    map: map,
-    center: [-113.4858, 53.5720],
-    zoom: 5
-  });
-
-
-//Trails feature layer (lines)
-  const trailsLayer = new FeatureLayer({
+        // Add the widget to the top-right corner of the view
+        view.ui.add(basemapGallery, {
+          position: "top-right"
+        });
+//Facelines feature layer (lines)
+  const linearface= new FeatureLayer({
     url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/GeoJSON_Webmap/FeatureServer/0"
   });
 
-  map.add(trailsLayer, 0);
+  map.add(linearface, 0);
 
-// Parks and open spaces (polygons)
-  const parksLayer = new FeatureLayer({
+// Polygon face (polygons)
+  const polygonface = new FeatureLayer({
     url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/GeoJSON_Webmap/FeatureServer/1"
   });
 
-  map.add(parksLayer, 0);
+  map.add(polygonface, 0);
 
   });
-</script>
 
+;
+</script>
 </head>
 <body>
   <div id="viewDiv"></div>
